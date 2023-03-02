@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none;
+    /* user-select: none; */
+}
+body{
+    background-color: grey;
 }
 #page{
     display: flex;
@@ -11,19 +14,39 @@
     gap: 30px;
     text-align: center;
 }
-.item{
-    width: 100px;
-    height: 100px;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font-size: 20px;
-    cursor: pointer;
-}
 .all__buttons{
     display: flex;
     flex-wrap: wrap;
     border: 1px solid red;
     width: 402px;
+    height: 400px;
+    
+    position: relative;
+}
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5761b9;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+    font-size: 32px;
+    cursor: pointer;
+    transition: all 0.3s;
 
+    position: absolute;
+}
+
+.mix{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7a51c7;
+    width: 180px;
+    height: 80px;
+    font-size: 20px;
+    cursor: pointer;
 }

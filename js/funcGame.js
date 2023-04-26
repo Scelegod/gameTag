@@ -240,3 +240,32 @@ function findValidCoords({blankCoords, matrix, blockedCoords}){
     }
     return validCoords;
 }
+
+// Смена цвет фона
+let body = document.querySelector('body');
+let inputColor = document.querySelector('.inputColor');
+
+inputColor.addEventListener('keypress', function(e){
+    if(e.key == 'Enter'){
+        if(inputColor.value.length == 6){
+            body.style.backgroundColor = "#" + inputColor.value;
+            inputColor.value = '';
+        }
+    }
+});
+
+//Смена цвет клеток
+let inputItemColor = document.querySelector('.inputItemColor');
+let items = document.querySelectorAll('.item');
+
+inputItemColor.addEventListener('keypress', function(e){
+    if(e.key == 'Enter'){
+        if(inputItemColor.value.length == 6){
+
+            for(let elem of items){
+                elem.style.background = "#" + inputItemColor.value;
+            }
+            inputItemColor.value = '';
+        }
+    }
+});

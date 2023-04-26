@@ -7,64 +7,6 @@
 body{
     background-color: rgb(99, 111, 165);
 }
-/* #page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    text-align: center;
-}
-.all__buttons{
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px solid red;
-    width: 402px;
-    height: 400px;
-    
-    position: relative;
-} */
-/* .item{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #5761b9;
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    padding: 0;
-    margin: 0;
-    font-size: 32px;
-    cursor: pointer;
-    transition: all 0.3s;
-
-    position: absolute;
-} */
-
-/* .mix{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #7a51c7;
-    width: 180px;
-    height: 80px;
-    font-size: 20px;
-    cursor: pointer;
-} */
-
-/* .button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #5761b9;
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    padding: 0;
-    margin: 0;
-    font-size: 32px;
-    cursor: pointer;
-    transition: all 0.3s;
-} */
 
 #page2{
     max-width: 400px;
@@ -137,4 +79,22 @@ h1{
 .gameShuffle{
      pointer-events: none;
      opacity: 0.8;
+}
+
+.colorChange{
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.bgrdColor, .itemColor{
+    font-size: 20px;
+}
+
+.inputColor, .inputItemColor{
+    height: 30px;
+    width: 160px;
+    font-size: 16px;
 }

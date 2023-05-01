@@ -8,18 +8,38 @@
     <title>Пятнашки</title>
 </head>
 <body>
+    <div class="header">
+        <h1>Пятнашки</h1>
+    </div>
     <div id="page2">
         <div class="game">
-            <h1>Пятнашки</h1>
             <div class="fifteen">
             </div>
             <button class="button" id="shuffle">Перемешать</button>
         </div>
-        <div class="colorChange">
-            <p class="bgrdColor">Сменить цвет фона</p>    
-            <input class="inputColor" type="text" value="" placeholder="Введи 6 символов">
-            <p class="itemColor">Сменить цвет плиток</p>    
-            <input class="inputItemColor" type="text" value="" placeholder="Ввeди 6 символов">
+    </div>
+    <div class="colorChange">
+        <p class="valueWinP">Количество побед: <span class="valueWinText"></span></p>    
+        <p class="bgrdColor">Сменить цвет фона</p>    
+        <input class="inputColor" type="text" value="" placeholder="Введи 6 символов">
+        <p class="itemColor">Сменить цвет плиток</p>    
+        <input class="inputItemColor" type="text" value="" placeholder="Ввeди 6 символов">
+    </div>
+    <div class="footer">
+        <div class="footer__soc-net">
+            <a href="https://github.com/Scelegod">
+                <img src="./icons/GitHub.svg" alt="github">
+            </a>
+            <a href="https://vk.com/scelegod">
+                <img src="./icons/VK.svg" alt="vk">
+            </a>
+            <a href="https://instagram.com/alexandr.krivoruchko?igshid=ZDdkNTZiNTM=">
+                <img src="./icons/Instagram.svg" alt="Instagram">
+            </a>
+        </div>
+        <div class="footer__worked">
+            <p class="footer__work">Работа:</p>
+            <p class="footer__worked">Криворучко Александра</p>
         </div>
     </div>
     <script src="/js/funcGame.js"></script>

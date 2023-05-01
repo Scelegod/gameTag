@@ -1,6 +1,7 @@
 let values = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 let containerNode = document.querySelector('.fifteen');
 let gameNode = document.querySelector('.game');
+let valueWinText = document.querySelector('.valueWinText');
 
 for(let val in values){
     let button = document.createElement('button');
@@ -24,7 +25,7 @@ if(itemNodes.length !== 16){
 
 // 1. Позиционирование 4х4
 itemNodes[countItems - 1].style.display = 'none';                         // Скрытие последнего элемента
-let matrix = getMatrix(itemNodes.map((item) => +item.dataset.matrixId));  //Получение массива из чисел dataset
+let matrix = getMatrix(itemNodes.map((item) => +item.dataset.matrixId ) );  //Получение массива из чисел dataset
 setPositionItems(matrix);
 
 // 2. Кнопка перемешивания Shuffle
@@ -183,7 +184,7 @@ function swap(coords1, coords2, matrix){
     let coords1Number = matrix[coords1.y][coords1.x];
     matrix[coords1.y][coords1.x] = matrix[coords2.y][coords2.x];
     matrix[coords2.y][coords2.x] = coords1Number; 
-    
+
     if(isWon(matrix)){
         console.log(true);
         addWonClass();
@@ -192,6 +193,7 @@ function swap(coords1, coords2, matrix){
 
 let winFlatArr = new Array(16).fill(0).map((_item, i) => i + 1);        //Выигрышный массив
 //Функция сверки массива и матрицы
+let valueWin = localStorage.getItem('valueWin') || 0;
 function isWon(matrix){
     let flatMatrix = matrix.flat();
     for(let i = 0; i < winFlatArr.length; i++){
@@ -199,6 +201,9 @@ function isWon(matrix){
             return false;
         }
     }
+    valueWin++;
+    valueWinText.textContent = valueWin;
+    localStorage.setItem('valueWin', valueWin);
     return true;
 }
 
@@ -225,6 +230,7 @@ function randomSwap(matrix){
     ];
     swap(blankCoords, swapCoords, matrix);
     blockedCoords = blankCoords;
+    
 }
 
 function findValidCoords({blankCoords, matrix, blockedCoords}){
@@ -248,6 +254,7 @@ let inputColor = document.querySelector('.inputColor');
 inputColor.addEventListener('keypress', function(e){
     if(e.key == 'Enter'){
         if(inputColor.value.length == 6){
+            localStorage.setItem('bodyColor', inputColor.value);
             body.style.backgroundColor = "#" + inputColor.value;
             inputColor.value = '';
         }
@@ -261,11 +268,20 @@ let items = document.querySelectorAll('.item');
 inputItemColor.addEventListener('keypress', function(e){
     if(e.key == 'Enter'){
         if(inputItemColor.value.length == 6){
-
+            localStorage.setItem('elemColor', inputItemColor.value);
+            
             for(let elem of items){
                 elem.style.background = "#" + inputItemColor.value;
             }
             inputItemColor.value = '';
         }
+    }
+});
+
+window.addEventListener('load', function(){
+    valueWinText.textContent = this.localStorage.getItem('valueWin'); 
+    body.style.backgroundColor = "#" + localStorage.getItem('bodyColor');
+    for(let elem of items){
+        elem.style.background = "#" + localStorage.getItem('elemColor');
     }
 });

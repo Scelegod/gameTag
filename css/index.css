@@ -6,6 +6,17 @@
 }
 body{
     background-color: rgb(99, 111, 165);
+    height: 978px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    background-color: #201f20;
+    color: white;
 }
 
 #page2{
@@ -14,10 +25,6 @@ body{
     margin: 0 auto;
     text-align: center;
     user-select: none;
-}
-
-h1{
-    margin-bottom: 32px;
 }
 
 .fifteen{
@@ -94,7 +101,36 @@ h1{
 }
 
 .inputColor, .inputItemColor{
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
     height: 30px;
     width: 160px;
     font-size: 16px;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+
+    margin-top: 142px;
+    background-color: #201f20;
+    height: 50px;
+
+    color: white;
+}
+
+@media (max-width: 375px) {
+    .item{
+        width: 74px;
+        height: 74px;
+    }
+}
+@media (max-width: 320px) {
+    .item{
+        width: 60px;
+        height: 60px;
+    }
 }
